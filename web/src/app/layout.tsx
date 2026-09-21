@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Amiri, Cormorant_Garamond } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from '@/components/theme/ThemeProvider';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const amiri = Amiri({ 
@@ -28,11 +29,13 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.variable} ${amiri.variable} ${cormorant.variable} font-sans bg-[#0e1015] text-[#d4d6dd] antialiased min-h-screen flex flex-col`}>
-        <div className="flex-1 flex flex-col">
-          {children}
-        </div>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <body className={`${inter.variable} ${amiri.variable} ${cormorant.variable} font-sans bg-[#f8f7f4] dark:bg-[#0e1015] text-[#1c1e24] dark:text-[#d4d6dd] antialiased min-h-screen flex flex-col transition-colors duration-200`}>
+        <ThemeProvider>
+          <div className="flex-1 flex flex-col">
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

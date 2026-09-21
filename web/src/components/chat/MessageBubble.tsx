@@ -26,7 +26,7 @@ export default function MessageBubble({ message, isStreaming }: MessageBubblePro
   if (isUser) {
     return (
       <div className="flex justify-end w-full py-2 animate-in fade-in duration-200">
-        <div className="max-w-[85%] md:max-w-[70%] rounded-xl bg-[#1a1d26] border border-[#2b303d] px-5 py-3.5 text-[#edeae3] text-sm md:text-[15px] font-light leading-relaxed">
+        <div className="max-w-[85%] md:max-w-[70%] rounded-xl bg-[#ede9e1] dark:bg-[#1a1d26] border border-[#ded8cb] dark:border-[#2b303d] px-5 py-3.5 text-[#1c1e24] dark:text-[#edeae3] text-sm md:text-[15px] font-light leading-relaxed shadow-sm dark:shadow-none">
           {message.content}
         </div>
       </div>
@@ -36,11 +36,11 @@ export default function MessageBubble({ message, isStreaming }: MessageBubblePro
   return (
     <div className="w-full py-3 space-y-4 animate-in fade-in duration-300">
       {/* Editorial Header Mark */}
-      <div className="flex items-center justify-between pb-1 border-b border-[#1b1e27]">
+      <div className="flex items-center justify-between pb-1 border-b border-[#e4dfd5] dark:border-[#1b1e27] transition-colors duration-200">
         <div className="flex items-center gap-2">
-          <span className="font-arabic text-sm text-[#9c9586]">مُوَاسَاة</span>
-          <span className="text-[11px] text-[#555a66] font-mono">•</span>
-          <span className="text-[11px] font-mono text-[#6e7380] uppercase tracking-wider">
+          <span className="font-arabic text-sm text-[#746957] dark:text-[#9c9586]">مُوَاسَاة</span>
+          <span className="text-[11px] text-[#8a8f9d] dark:text-[#555a66] font-mono">•</span>
+          <span className="text-[11px] font-mono text-[#656b7c] dark:text-[#6e7380] uppercase tracking-wider">
             Reflection
           </span>
         </div>
@@ -48,10 +48,10 @@ export default function MessageBubble({ message, isStreaming }: MessageBubblePro
         {!isStreaming && (
           <button
             onClick={handleCopy}
-            className="inline-flex items-center gap-1 text-[11px] text-[#555a66] hover:text-[#b0ac9f] transition-colors"
+            className="inline-flex items-center gap-1 text-[11px] text-[#767c8a] dark:text-[#555a66] hover:text-[#1c1e24] dark:hover:text-[#b0ac9f] transition-colors"
             title="Copy reflection"
           >
-            {copied ? <Check className="w-3 h-3 text-[#9c9586]" /> : <Copy className="w-3 h-3" />}
+            {copied ? <Check className="w-3 h-3 text-[#746957] dark:text-[#9c9586]" /> : <Copy className="w-3 h-3" />}
             <span>{copied ? 'Copied' : 'Copy'}</span>
           </button>
         )}
@@ -59,10 +59,10 @@ export default function MessageBubble({ message, isStreaming }: MessageBubblePro
 
       {/* Main Prose Text */}
       {message.content && (
-        <div className="text-[#e2ded5] text-sm md:text-[15px] leading-[1.8] font-light space-y-4 whitespace-pre-wrap">
+        <div className="text-[#1f2229] dark:text-[#e2ded5] text-sm md:text-[15px] leading-[1.85] font-light space-y-4 whitespace-pre-wrap">
           {message.content}
           {isStreaming && (
-            <span className="inline-block w-1.5 h-3.5 ml-1 bg-[#8f8574] animate-pulse align-middle" />
+            <span className="inline-block w-1.5 h-3.5 ml-1 bg-[#7a6e5b] dark:bg-[#8f8574] animate-pulse align-middle" />
           )}
         </div>
       )}

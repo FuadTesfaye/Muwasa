@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { ArrowRight, Shield, BookOpen, Compass } from 'lucide-react';
+import ThemeToggle from '@/components/theme/ThemeToggle';
 
 const CONTEMPLATIVE_PATHS = [
   {
@@ -68,27 +69,35 @@ export default function LandingPage() {
   return (
     <main className="flex-1 flex flex-col justify-between max-w-4xl mx-auto w-full px-6 py-12 md:py-16">
       {/* Top Header */}
-      <header className="w-full flex items-center justify-between pb-12 border-b border-[#1c202a]">
+      <header className="w-full flex items-center justify-between pb-12 border-b border-[#e4dfd5] dark:border-[#1c202a] transition-colors duration-200">
         <div className="flex items-center gap-3">
-          <span className="font-arabic text-xl tracking-wide text-[#e8e5df]">مُوَاسَاة</span>
-          <span className="text-xs font-serif-heading italic text-[#787d89]">Muwāsā</span>
+          <span className="font-arabic text-2xl tracking-wide text-[#1c1e24] dark:text-[#e8e5df]">
+            مُوَاسَاة
+          </span>
+          <span className="text-xs font-serif-heading italic text-[#7a7263] dark:text-[#787d89]">
+            Muwāsā
+          </span>
         </div>
-        <div className="flex items-center gap-2 text-[11px] text-[#6e737f] font-mono tracking-wider uppercase">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#526359]" />
-          <span>Private Sanctuary</span>
+        
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 text-[11px] text-[#6b7180] dark:text-[#6e737f] font-mono tracking-wider uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#7a8c80] dark:bg-[#526359]" />
+            <span className="hidden sm:inline">Private Sanctuary</span>
+          </div>
+          <ThemeToggle />
         </div>
       </header>
 
       {/* Hero & Central Space */}
       <section className="my-14 md:my-20 space-y-8">
         <div className="space-y-4">
-          <p className="font-arabic text-lg md:text-xl text-[#8e8a80] select-none text-right md:text-left">
+          <p className="font-arabic text-lg md:text-xl text-[#7c7365] dark:text-[#8e8a80] select-none text-right md:text-left">
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
-          <h1 className="text-3xl md:text-5xl font-serif-heading font-normal text-[#f4f2ed] tracking-tight leading-[1.25]">
+          <h1 className="text-3xl md:text-5xl font-serif-heading font-normal text-[#181a20] dark:text-[#f4f2ed] tracking-tight leading-[1.25]">
             When your heart is heavy, speak.
           </h1>
-          <p className="text-sm md:text-base text-[#9297a5] font-light max-w-xl leading-relaxed">
+          <p className="text-sm md:text-base text-[#525765] dark:text-[#9297a5] font-light max-w-xl leading-relaxed">
             A quiet space that listens before it speaks. You will not be met with cliché platitudes
             or told to &ldquo;just have sabr.&rdquo; Your situation is heard, understood, and grounded in
             the authentic Qur&rsquo;an, Sunnah, and scholarly wisdom.
@@ -97,7 +106,7 @@ export default function LandingPage() {
 
         {/* Primary Input Vessel */}
         <form onSubmit={handleSubmit} className="pt-2">
-          <div className="relative rounded-xl border border-[#232732] bg-[#12141a] transition-all duration-200 focus-within:border-[#424858]">
+          <div className="relative rounded-xl border border-[#ded7cb] dark:border-[#232732] bg-[#ffffff] dark:bg-[#12141a] transition-all duration-200 focus-within:border-[#8f8574] dark:focus-within:border-[#424858] shadow-sm dark:shadow-none">
             <textarea
               rows={3}
               value={inputValue}
@@ -109,17 +118,17 @@ export default function LandingPage() {
                 }
               }}
               placeholder="What is weighing on your heart tonight? Speak plainly..."
-              className="w-full bg-transparent p-5 text-sm md:text-base text-[#f2f0eb] placeholder-[#4f5462] resize-none focus:outline-none font-light leading-relaxed"
+              className="w-full bg-transparent p-5 text-sm md:text-base text-[#181a20] dark:text-[#f2f0eb] placeholder-[#948f83] dark:placeholder-[#4f5462] resize-none focus:outline-none font-light leading-relaxed"
             />
-            <div className="flex items-center justify-between px-5 py-3 border-t border-[#1a1d26] text-xs text-[#555a66]">
+            <div className="flex items-center justify-between px-5 py-3 border-t border-[#f0ebe0] dark:border-[#1a1d26] text-xs text-[#767c8a] dark:text-[#555a66]">
               <span className="hidden sm:inline font-mono text-[11px]">Enter to begin • Shift+Enter for new line</span>
               <button
                 type="submit"
                 disabled={!inputValue.trim()}
-                className="ml-auto inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#20242e] hover:bg-[#2b303d] text-[#e8e5df] text-xs font-medium tracking-wide transition-colors disabled:opacity-30 disabled:cursor-not-allowed border border-[#2d3240]"
+                className="ml-auto inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1c1f26] hover:bg-[#2e3340] dark:bg-[#20242e] dark:hover:bg-[#2b303d] text-[#ffffff] dark:text-[#e8e5df] text-xs font-medium tracking-wide transition-colors disabled:opacity-30 disabled:cursor-not-allowed border border-[#2b303d] dark:border-[#2d3240]"
               >
                 <span>Enter Sanctuary</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#a19d94]" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#a8a49a] dark:text-[#a19d94]" />
               </button>
             </div>
           </div>
@@ -128,11 +137,11 @@ export default function LandingPage() {
 
       {/* Contemplative Entry Points */}
       <section className="my-10 space-y-4">
-        <div className="flex items-center justify-between pb-2 border-b border-[#1c202a]">
-          <span className="text-[11px] font-mono tracking-widest text-[#5c6170] uppercase">
+        <div className="flex items-center justify-between pb-2 border-b border-[#e4dfd5] dark:border-[#1c202a]">
+          <span className="text-[11px] font-mono tracking-widest text-[#717684] dark:text-[#5c6170] uppercase">
             Contemplative Paths
           </span>
-          <span className="text-[11px] text-[#5c6170]">Choose where to begin</span>
+          <span className="text-[11px] text-[#717684] dark:text-[#5c6170]">Choose where to begin</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -140,26 +149,26 @@ export default function LandingPage() {
             <button
               key={item.index}
               onClick={() => handleStart(item.prompt)}
-              className="text-left p-5 rounded-lg border border-[#1b1f28] bg-[#111319] hover:bg-[#151821] hover:border-[#2b303d] transition-all group flex flex-col justify-between space-y-4"
+              className="text-left p-5 rounded-lg border border-[#e4ded4] dark:border-[#1b1f28] bg-[#ffffff] dark:bg-[#111319] hover:bg-[#faf8f4] dark:hover:bg-[#151821] hover:border-[#cbc3b2] dark:hover:border-[#2b303d] transition-all group flex flex-col justify-between space-y-4 shadow-sm dark:shadow-none"
             >
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[10px] text-[#555a66] tracking-wider">
+                  <span className="font-mono text-[10px] text-[#9298a6] dark:text-[#555a66] tracking-wider">
                     {item.index}
                   </span>
-                  <span className="font-arabic text-xs text-[#8c867a] dir-rtl">
+                  <span className="font-arabic text-xs text-[#706454] dark:text-[#8c867a] dir-rtl">
                     {item.titleAr}
                   </span>
                 </div>
-                <h3 className="text-sm font-medium text-[#e4e1da] group-hover:text-white transition-colors">
+                <h3 className="text-sm font-medium text-[#1c1e24] dark:text-[#e4e1da] group-hover:text-black dark:group-hover:text-white transition-colors">
                   {item.titleEn}
                 </h3>
-                <p className="text-xs text-[#7d8291] font-light leading-relaxed">
+                <p className="text-xs text-[#636877] dark:text-[#7d8291] font-light leading-relaxed">
                   {item.desc}
                 </p>
               </div>
 
-              <div className="text-[11px] text-[#4f5462] group-hover:text-[#a39f96] flex items-center gap-1 transition-colors pt-2">
+              <div className="text-[11px] text-[#827a6c] dark:text-[#4f5462] group-hover:text-[#2d2822] dark:group-hover:text-[#a39f96] flex items-center gap-1 transition-colors pt-2">
                 <span>Reflect</span>
                 <ArrowRight className="w-3 h-3 transform group-hover:translate-x-0.5 transition-transform" />
               </div>
@@ -169,28 +178,28 @@ export default function LandingPage() {
       </section>
 
       {/* Dignified Footer */}
-      <footer className="pt-16 pb-6 border-t border-[#1c202a] text-xs text-[#636875] grid grid-cols-1 md:grid-cols-3 gap-6 font-light">
+      <footer className="pt-16 pb-6 border-t border-[#e4dfd5] dark:border-[#1c202a] text-xs text-[#636875] grid grid-cols-1 md:grid-cols-3 gap-6 font-light transition-colors duration-200">
         <div className="flex items-start gap-2.5">
-          <Shield className="w-4 h-4 text-[#7d796f] shrink-0 mt-0.5" />
+          <Shield className="w-4 h-4 text-[#7a7263] dark:text-[#7d796f] shrink-0 mt-0.5" />
           <div>
-            <p className="font-medium text-[#c0bcb2]">Private & Unrecorded</p>
-            <p className="text-[11px] text-[#5c6170] mt-0.5">Sessions are ephemeral. Delete your conversation at any time with one click.</p>
+            <p className="font-medium text-[#1c1e24] dark:text-[#c0bcb2]">Private &amp; Unrecorded</p>
+            <p className="text-[11px] text-[#656b7a] dark:text-[#5c6170] mt-0.5">Sessions are ephemeral. Delete your conversation at any time with one click.</p>
           </div>
         </div>
 
         <div className="flex items-start gap-2.5">
-          <BookOpen className="w-4 h-4 text-[#7d796f] shrink-0 mt-0.5" />
+          <BookOpen className="w-4 h-4 text-[#7a7263] dark:text-[#7d796f] shrink-0 mt-0.5" />
           <div>
-            <p className="font-medium text-[#c0bcb2]">Bound to Sacred Sources</p>
-            <p className="text-[11px] text-[#5c6170] mt-0.5">Anchored in verified Qur&rsquo;an (Tanzil.net) and authenticated Hadith (HadeethEnc).</p>
+            <p className="font-medium text-[#1c1e24] dark:text-[#c0bcb2]">Bound to Sacred Sources</p>
+            <p className="text-[11px] text-[#656b7a] dark:text-[#5c6170] mt-0.5">Anchored in verified Qur&rsquo;an (Tanzil.net) and authenticated Hadith (HadeethEnc).</p>
           </div>
         </div>
 
         <div className="flex items-start gap-2.5">
-          <Compass className="w-4 h-4 text-[#7d796f] shrink-0 mt-0.5" />
+          <Compass className="w-4 h-4 text-[#7a7263] dark:text-[#7d796f] shrink-0 mt-0.5" />
           <div>
-            <p className="font-medium text-[#c0bcb2]">Listening Before Advice</p>
-            <p className="text-[11px] text-[#5c6170] mt-0.5">No superficial dismissals. Your grief and struggle are acknowledged with dignity.</p>
+            <p className="font-medium text-[#1c1e24] dark:text-[#c0bcb2]">Listening Before Advice</p>
+            <p className="text-[11px] text-[#656b7a] dark:text-[#5c6170] mt-0.5">No superficial dismissals. Your grief and struggle are acknowledged with dignity.</p>
           </div>
         </div>
       </footer>

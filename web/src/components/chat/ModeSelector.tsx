@@ -48,18 +48,18 @@ export default function ModeSelector({ onSelect }: ModeSelectorProps) {
         <button
           key={mode.index}
           onClick={() => onSelect(mode.message)}
-          className="text-left p-5 rounded-lg border border-[#1d212b] bg-[#11131a] hover:bg-[#151822] hover:border-[#2b303d] transition-all group flex flex-col justify-between space-y-3"
+          className="text-left p-5 rounded-lg border border-[#ded8cb] dark:border-[#1d212b] bg-[#ffffff] dark:bg-[#11131a] hover:bg-[#faf8f4] dark:hover:bg-[#151822] hover:border-[#cbc3b2] dark:hover:border-[#2b303d] transition-all group flex flex-col justify-between space-y-3 shadow-sm dark:shadow-none"
         >
           <div className="flex items-center justify-between w-full">
-            <span className="font-mono text-[10px] text-[#555a66] tracking-wider">
+            <span className="font-mono text-[10px] text-[#9298a6] dark:text-[#555a66] tracking-wider">
               {mode.index}
             </span>
-            <span className="font-arabic text-xs text-[#8c867a] dir-rtl">
+            <span className="font-arabic text-xs text-[#706454] dark:text-[#8c867a] dir-rtl">
               {mode.titleAr}
             </span>
           </div>
           <div>
-            <h4 className="text-sm font-medium text-[#edeae3] group-hover:text-white transition-colors">
+            <h4 className="text-sm font-medium text-[#1c1e24] dark:text-[#edeae3] group-hover:text-black dark:group-hover:text-white transition-colors">
               {mode.titleEn}
             </h4>
           </div>
