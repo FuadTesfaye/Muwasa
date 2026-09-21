@@ -26,6 +26,9 @@ env/
 htmlcov/
 .coverage
 
+# Unrelated nested projects
+Bunyan/
+
 # Node.js
 node_modules/
 .next/
