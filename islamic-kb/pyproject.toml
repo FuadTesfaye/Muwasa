@@ -1,0 +1,15 @@
+[project]
+name = "islamic-kb"
+version = "0.1.0"
+description = "Islamic Knowledge Base ingestion system for Muwasa"
+requires-python = ">=3.9"
+dependencies = [
+    "httpx",
+    "lxml",
+    "asyncpg",
+    "python-dotenv",
+    "tqdm",
+    "pydantic",
+    "openai",
+    "sentence-transformers"
+]

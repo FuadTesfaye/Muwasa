@@ -1,0 +1,74 @@
+# ========================================
+# Muwāsā — مُوَاسَاة
+# ========================================
+
+# Environment & secrets
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# Node.js
+node_modules/
+.next/
+out/
+.turbo/
+*.tsbuildinfo
+
+# Islamic KB raw data (downloaded, not committed)
+islamic-kb/data/tanzil/
+islamic-kb/data/quranenc/
+islamic-kb/data/hadeethenc/
+islamic-kb/data/corpus/
+islamic-kb/data/*.xml
+islamic-kb/data/*.json
+islamic-kb/data/*.sql
+islamic-kb/data/*.txt
+
+# Evaluation reports (generated)
+evaluation/reports/*.json
+evaluation/reports/*.html
+
+# Database
+*.sqlite
+*.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Docker volumes
+postgres_data/
+redis_data/
+
+# Logs
+*.log
+logs/
+
+# Supabase
+.supabase/
+supabase/.temp/

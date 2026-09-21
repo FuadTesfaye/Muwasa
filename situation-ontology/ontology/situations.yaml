@@ -1,0 +1,176 @@
+situations:
+  # Loss
+  - slug: death
+    name_en: Death of a Loved One
+    name_ar: وفاة
+    category: loss
+    description: Grieving the passing of a family member, friend, or loved one.
+  - slug: breakup
+    name_en: Breakup
+    category: loss
+    description: Ending of a romantic relationship before marriage.
+  - slug: friendship_loss
+    name_en: Friendship Loss
+    category: loss
+    description: Losing a close friend through drifting apart or conflict.
+  - slug: job_loss
+    name_en: Job Loss
+    category: loss
+    description: Being fired, laid off, or losing one's source of income.
+  
+  # Relationships
+  - slug: parent_pressure
+    name_en: Parent Pressure
+    category: relationships
+    description: Facing overwhelming expectations or pressure from parents.
+  - slug: marriage_difficulty
+    name_en: Marriage Difficulty
+    category: relationships
+    description: Experiencing general struggles within a marriage.
+  - slug: spouse_conflict
+    name_en: Spouse Conflict
+    category: relationships
+    parent: marriage_difficulty
+    description: Active fighting or tension with a husband or wife.
+  - slug: divorce
+    name_en: Divorce
+    category: relationships
+    description: Going through the process or aftermath of marital separation.
+  - slug: children_issues
+    name_en: Children Issues
+    category: relationships
+    description: Struggles related to parenting or the behavior of children.
+  - slug: friendship_conflict
+    name_en: Friendship Conflict
+    category: relationships
+    description: Arguments or betrayal within a friendship.
+  - slug: community_conflict
+    name_en: Community Conflict
+    category: relationships
+    description: Issues with the local Muslim community or society at large.
+  - slug: family_comparison
+    name_en: Family Comparison
+    category: relationships
+    description: Being negatively compared to siblings or relatives.
+  - slug: betrayal
+    name_en: Betrayal
+    category: relationships
+    description: Experiencing a breach of trust by someone close.
+  - slug: bullying
+    name_en: Bullying
+    category: relationships
+    description: Being the target of systematic abuse or mocking.
+  - slug: rejection
+    name_en: Rejection
+    category: relationships
+    description: Being turned down, whether socially, romantically (proposal), or professionally.
+  - slug: abuse
+    name_en: Abuse
+    category: relationships
+    description: Experiencing physical, emotional, or verbal harm.
+  - slug: parenting
+    name_en: Parenting Struggles
+    category: relationships
+    description: Feeling overwhelmed by the responsibilities of raising children.
+
+  # Self
+  - slug: shame
+    name_en: Shame
+    category: self
+    description: Deep internalized feelings of being flawed or unworthy.
+  - slug: guilt
+    name_en: Guilt
+    category: self
+    description: Regret and self-blame over specific actions.
+  - slug: insecurity
+    name_en: Insecurity
+    category: self
+    description: Lack of confidence in oneself or one's appearance/abilities.
+  - slug: academic_failure
+    name_en: Academic Failure
+    category: self
+    description: Failing classes, exams, or dropping out of school.
+  - slug: career_failure
+    name_en: Career Failure
+    category: self
+    description: Stagnation, mistakes, or unfulfilled potential in one's profession.
+  - slug: identity_crisis
+    name_en: Identity Crisis
+    category: self
+    description: Confusion about who one is, culturally or personally.
+  - slug: addiction
+    name_en: Addiction
+    category: self
+    description: Struggling with compulsive behaviors or substance reliance.
+  - slug: sexual_temptation
+    name_en: Sexual Temptation
+    category: self
+    description: Battling unwanted urges or fighting temptations (e.g. pornography, zina).
+  - slug: illness
+    name_en: Illness
+    category: self
+    description: Suffering from physical or mental health conditions.
+
+  # Worship & Spirituality
+  - slug: weak_iman
+    name_en: Weak Iman
+    name_ar: ضعف الإيمان
+    category: worship
+    description: Feeling disconnected from Allah and faith.
+  - slug: missed_salah
+    name_en: Missed Salah
+    category: worship
+    description: Guilt and struggle with maintaining daily prayers.
+  - slug: quran_guilt
+    name_en: Quran Guilt
+    category: worship
+    description: Feeling bad about abandoning the Quran.
+  - slug: dua_unanswered
+    name_en: Unanswered Dua
+    category: worship
+    description: Frustration and doubt when prayers seem ignored.
+  - slug: repentance
+    name_en: Repentance Struggles
+    name_ar: توبة
+    category: worship
+    description: Wanting to repent but feeling unworthy or continuously falling back into sin.
+  - slug: waswas
+    name_en: Waswas (Whispers)
+    name_ar: وسوسة
+    category: worship
+    description: Intrusive thoughts, particularly regarding faith or purity (OCD).
+  - slug: riya
+    name_en: Riya (Showing off)
+    name_ar: رياء
+    category: worship
+    description: Fear that one's good deeds are not sincere for Allah.
+  - slug: religious_doubt
+    name_en: Religious Doubt
+    category: worship
+    description: Questioning core tenets of Islam or existence of God.
+
+  # Worldly Pressure
+  - slug: financial_problem
+    name_en: Financial Problem
+    category: worldly_pressure
+    description: Debt, poverty, or inability to meet financial obligations.
+  - slug: academic_pressure
+    name_en: Academic Pressure
+    category: worldly_pressure
+    description: Intense stress from studies and university expectations.
+  - slug: work_pressure
+    name_en: Work Pressure
+    category: worldly_pressure
+    description: Burnout and stress from employment responsibilities.
+  - slug: social_expectations
+    name_en: Social Expectations
+    category: worldly_pressure
+    description: Feeling crushed by what society expects (marriage timeline, success).
+  - slug: migration
+    name_en: Migration
+    category: worldly_pressure
+    description: Struggles related to moving to a new country (refugee, immigrant).
+  - slug: homesickness
+    name_en: Homesickness
+    category: worldly_pressure
+    description: Longing for one's home country, culture, or distant family.

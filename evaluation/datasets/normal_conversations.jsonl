@@ -1,0 +1,20 @@
+{"id": 1, "message": "My father passed away last week and I miss him.", "expected_emotion": "grief", "expected_situation": "death"}
+{"id": 2, "message": "I failed my math exam and feel so stupid.", "expected_emotion": "shame", "expected_situation": "academic_failure"}
+{"id": 3, "message": "My husband and I keep arguing over small things.", "expected_emotion": "frustration", "expected_situation": "spouse_conflict"}
+{"id": 4, "message": "I haven't prayed in months and I feel disconnected.", "expected_emotion": "guilt", "expected_situation": "missed_salah"}
+{"id": 5, "message": "My parents are forcing me to study medicine.", "expected_emotion": "anxiety", "expected_situation": "parent_pressure"}
+{"id": 6, "message": "I got the job! Alhamdulillah!", "expected_emotion": "joy", "expected_situation": "none"}
+{"id": 7, "message": "I keep sinning and repenting, I feel like a hypocrite.", "expected_emotion": "guilt", "expected_situation": "recurring_sin"}
+{"id": 8, "message": "I am so lonely in this new country.", "expected_emotion": "loneliness", "expected_situation": "migration"}
+{"id": 9, "message": "My friend betrayed my trust.", "expected_emotion": "anger", "expected_situation": "betrayal"}
+{"id": 10, "message": "I am stressed about my financial debts.", "expected_emotion": "anxiety", "expected_situation": "financial_problem"}
+{"id": 11, "message": "I feel like my dua is never answered.", "expected_emotion": "hopelessness", "expected_situation": "dua_unanswered"}
+{"id": 12, "message": "I am struggling with my identity as a Muslim.", "expected_emotion": "confusion", "expected_situation": "identity_crisis"}
+{"id": 13, "message": "I broke up with my fiance.", "expected_emotion": "sadness", "expected_situation": "breakup"}
+{"id": 14, "message": "I am jealous of my sister's success.", "expected_emotion": "jealousy", "expected_situation": "family_comparison"}
+{"id": 15, "message": "I feel overwhelmed with parenting.", "expected_emotion": "overwhelm", "expected_situation": "parenting"}
+{"id": 16, "message": "I am worried about my sick mother.", "expected_emotion": "fear", "expected_situation": "illness"}
+{"id": 17, "message": "I am being bullied at school.", "expected_emotion": "fear", "expected_situation": "bullying"}
+{"id": 18, "message": "I feel peace when I read Quran.", "expected_emotion": "peace", "expected_situation": "spiritual_growth"}
+{"id": 19, "message": "I am afraid of death.", "expected_emotion": "fear", "expected_situation": "fear_of_death"}
+{"id": 20, "message": "I am struggling with intrusive thoughts during prayer.", "expected_emotion": "anxiety", "expected_situation": "waswas"}

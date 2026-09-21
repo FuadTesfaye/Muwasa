@@ -1,0 +1,121 @@
+spiritual_states:
+  - slug: weak_iman
+    name_en: Weak Faith
+    name_ar: ضعف الإيمان
+    description: A state of feeling distant from Allah, lacking motivation for worship, and feeling spiritually numb.
+    related_concepts: [spiritual_growth, returning_to_allah]
+    related_emotions: [guilt, sadness, emptiness]
+  - slug: missed_salah
+    name_en: Missed Prayers
+    name_ar: ترك الصلاة
+    description: Struggling to establish or maintain the five daily prayers.
+    related_concepts: [repentance, returning_to_allah]
+    related_emotions: [guilt, shame, anxiety]
+  - slug: quran_guilt
+    name_en: Quran Abandonment Guilt
+    name_ar: هجر القرآن
+    description: Feeling guilty for not reading or connecting with the Quran.
+    related_concepts: [returning_to_allah, spiritual_growth]
+    related_emotions: [guilt, regret]
+  - slug: dua_unanswered
+    name_en: Feeling Duas are Unanswered
+    name_ar: تأخر الإجابة
+    description: Experiencing doubt, frustration, or sadness when supplications seem to go unanswered.
+    related_concepts: [tawakkul, sabr, qadr_confusion]
+    related_emotions: [hopelessness, frustration, despair]
+  - slug: fear_of_allah
+    name_en: Fear of Allah
+    name_ar: تقوى / خوف
+    description: A profound reverence and fear of Allah's punishment, which can sometimes border on despair if unbalanced by hope.
+    related_concepts: [lack_of_hope, repentance]
+    related_emotions: [fear, anxiety]
+  - slug: lack_of_hope
+    name_en: Lack of Hope in Mercy
+    name_ar: قنوط من رحمة الله
+    description: Believing that one's sins are too great to be forgiven by Allah.
+    related_concepts: [fear_of_allah, sin_and_guilt]
+    related_emotions: [despair, hopelessness]
+  - slug: repentance
+    name_en: Repentance
+    name_ar: توبة
+    description: The process of turning back to Allah after committing sins.
+    related_concepts: [returning_to_allah, sin_and_guilt]
+    related_emotions: [hope, regret, relief]
+  - slug: tawakkul
+    name_en: Reliance on Allah
+    name_ar: توكل
+    description: Trusting in Allah's plan while taking necessary worldly means.
+    related_concepts: [sabr, spiritual_growth]
+    related_emotions: [peace, trust, relief]
+  - slug: sabr
+    name_en: Patience
+    name_ar: صبر
+    description: Enduring hardship without complaint and remaining steadfast in faith.
+    related_concepts: [tawakkul, qadr_confusion]
+    related_emotions: [peace, contentment]
+  - slug: qadr_confusion
+    name_en: Confusion over Decree
+    name_ar: حيرة في القدر
+    description: Struggling to understand why Allah allowed certain painful events to happen.
+    related_concepts: [dua_unanswered, sabr]
+    related_emotions: [confusion, resentment, grief]
+  - slug: waswas
+    name_en: Intrusive Thoughts
+    name_ar: وسوسة
+    description: Unwanted, intrusive thoughts (often from Shaytan) regarding purity, faith, or Allah.
+    related_concepts: [spiritual_growth]
+    related_emotions: [anxiety, fear, confusion]
+  - slug: riya
+    name_en: Showing Off
+    name_ar: رياء
+    description: Doing acts of worship for the sake of being seen by people rather than for Allah.
+    related_concepts: [spiritual_growth]
+    related_emotions: [guilt, fear]
+  - slug: hasad
+    name_en: Envy
+    name_ar: حسد
+    description: Wishing for someone else's blessing to be removed or harboring bitterness over others' success.
+    related_concepts: [attachment_to_dunya]
+    related_emotions: [envy, bitterness, resentment]
+  - slug: attachment_to_dunya
+    name_en: Attachment to the World
+    name_ar: حب الدنيا
+    description: Excessive love for worldly possessions, status, or pleasures.
+    related_concepts: [fear_of_death, hasad]
+    related_emotions: [anxiety, greed]
+  - slug: fear_of_death
+    name_en: Fear of Death
+    name_ar: الخوف من الموت
+    description: Intense anxiety about dying and facing the afterlife.
+    related_concepts: [attachment_to_dunya, lack_of_hope]
+    related_emotions: [fear, anxiety]
+  - slug: gratitude
+    name_en: Gratitude
+    name_ar: شكر
+    description: Recognizing and appreciating Allah's blessings.
+    related_concepts: [contentment, spiritual_growth]
+    related_emotions: [joy, contentment, peace]
+  - slug: spiritual_growth
+    name_en: Spiritual Growth
+    name_ar: تزكية
+    description: Actively seeking to improve one's character and worship.
+    related_concepts: [returning_to_allah, repentance]
+    related_emotions: [hope, peace]
+  - slug: returning_to_allah
+    name_en: Returning to Allah
+    name_ar: إنابة
+    description: The journey of coming back to practicing Islam after a period of neglect.
+    related_concepts: [repentance, spiritual_growth]
+    related_emotions: [hope, relief, peace]
+  - slug: sin_and_guilt
+    name_en: Sin and Guilt
+    name_ar: ذنب
+    description: The heavy burden felt after committing a transgression.
+    related_concepts: [recurring_sin, repentance]
+    related_emotions: [guilt, shame, sorrow]
+  - slug: recurring_sin
+    name_en: Recurring Sin
+    name_ar: إصرار على المعصية
+    description: Feeling trapped in a cycle of committing the same sin and repenting.
+    related_concepts: [sin_and_guilt, lack_of_hope]
+    related_emotions: [frustration, despair, shame]

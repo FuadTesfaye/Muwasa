@@ -1,0 +1,134 @@
+emotions:
+  # Negative
+  - slug: sadness
+    name_en: Sadness
+    name_ar: حزن (Huzn)
+    category: negative
+    description: A feeling of sorrow or unhappiness.
+  - slug: grief
+    name_en: Grief
+    name_ar: غم (Ghamm)
+    category: negative
+    description: Deep sorrow, especially caused by someone's death.
+  - slug: fear
+    name_en: Fear
+    name_ar: خوف (Khawf)
+    category: negative
+    description: An unpleasant emotion caused by the threat of danger, pain, or harm.
+  - slug: anger
+    name_en: Anger
+    name_ar: غضب (Ghadab)
+    category: negative
+    description: A strong feeling of annoyance, displeasure, or hostility.
+  - slug: guilt
+    name_en: Guilt
+    name_ar: ذنب (Dhanb)
+    category: negative
+    description: A feeling of having committed wrong or failed in an obligation.
+  - slug: shame
+    name_en: Shame
+    name_ar: خجل (Khajal) / عار ('Aar)
+    category: negative
+    description: A painful feeling of humiliation or distress caused by the consciousness of wrong or foolish behavior.
+  - slug: loneliness
+    name_en: Loneliness
+    name_ar: وحدة (Wahdah)
+    category: negative
+    description: Sadness because one has no friends or company.
+  - slug: regret
+    name_en: Regret
+    name_ar: ندم (Nadam)
+    category: negative
+    description: A feeling of sadness, repentance, or disappointment over an occurrence or something that one has done or failed to do.
+  - slug: hopelessness
+    name_en: Hopelessness
+    name_ar: يأس (Ya's)
+    category: negative
+    description: A feeling or state of despair; lack of hope.
+  - slug: confusion
+    name_en: Confusion
+    name_ar: حيرة (Hayrah)
+    category: negative
+    description: Lack of understanding; uncertainty.
+  - slug: jealousy
+    name_en: Jealousy
+    name_ar: غيرة (Gheerah)
+    category: negative
+    description: Feeling or showing an envious resentment of someone or their achievements, possessions, or perceived advantages.
+  - slug: envy
+    name_en: Envy
+    name_ar: حسد (Hasad)
+    category: negative
+    description: A feeling of discontented or resentful longing aroused by someone else's possessions, qualities, or luck.
+  - slug: frustration
+    name_en: Frustration
+    name_ar: إحباط (Ihbat)
+    category: negative
+    description: The feeling of being upset or annoyed as a result of being unable to change or achieve something.
+  - slug: overwhelm
+    name_en: Overwhelm
+    name_ar: إرهاق نفسي (Irhaq Nafsi)
+    category: negative
+    description: Bury or drown beneath a huge mass of something, especially emotionally.
+  - slug: anxiety
+    name_en: Anxiety
+    name_ar: قلق (Qalaq)
+    category: negative
+    description: A feeling of worry, nervousness, or unease about something with an uncertain outcome.
+  - slug: despair
+    name_en: Despair
+    name_ar: قنوط (Qunoot)
+    category: negative
+    description: The complete loss or absence of hope.
+  - slug: resentment
+    name_en: Resentment
+    name_ar: استياء (Istiya')
+    category: negative
+    description: Bitter indignation at having been treated unfairly.
+  - slug: bitterness
+    name_en: Bitterness
+    name_ar: مرارة (Mararah)
+    category: negative
+    description: Anger and disappointment at being treated unfairly; resentful or cynical.
+  
+  # Positive
+  - slug: peace
+    name_en: Peace
+    name_ar: سكينة (Sakinah)
+    category: positive
+    description: Freedom from disturbance; tranquility.
+  - slug: hope
+    name_en: Hope
+    name_ar: رجاء (Raja')
+    category: positive
+    description: A feeling of expectation and desire for a particular thing to happen.
+  - slug: gratitude
+    name_en: Gratitude
+    name_ar: شكر (Shukr)
+    category: positive
+    description: The quality of being thankful; readiness to show appreciation for and to return kindness.
+  - slug: love
+    name_en: Love
+    name_ar: حب (Hubb)
+    category: positive
+    description: An intense feeling of deep affection.
+  - slug: contentment
+    name_en: Contentment
+    name_ar: رضا (Rida)
+    category: positive
+    description: A state of happiness and satisfaction.
+  - slug: relief
+    name_en: Relief
+    name_ar: فرج (Faraj)
+    category: positive
+    description: A feeling of reassurance and relaxation following release from anxiety or distress.
+  - slug: joy
+    name_en: Joy
+    name_ar: فرح (Farah)
+    category: positive
+    description: A feeling of great pleasure and happiness.
+  - slug: trust
+    name_en: Trust
+    name_ar: توكل (Tawakkul)
+    category: positive
+    description: Firm belief in the reliability, truth, or ability of someone or something, specifically Allah.

@@ -1,0 +1,55 @@
+safety_states:
+  - slug: self_harm
+    name_en: Self-Harm
+    severity: critical
+    action: crisis_response
+    description: The user is actively engaging in or expressing intent to engage in non-suicidal self-injury.
+    indicators: ["cutting", "burning", "hurting myself", "punishing myself physically"]
+  - slug: suicidal_ideation
+    name_en: Suicidal Ideation
+    severity: critical
+    action: crisis_response
+    description: The user expresses thoughts of ending their life, feeling they'd be better off dead, or specific suicide plans.
+    indicators: ["kill myself", "end it all", "don't want to live", "better off dead", "make it stop permanently"]
+  - slug: imminent_danger
+    name_en: Imminent Danger
+    severity: critical
+    action: crisis_response
+    description: The user is in a situation where their life or physical safety is immediately threatened.
+    indicators: ["he has a weapon", "I am trapped", "they are going to kill me"]
+  - slug: harm_to_others
+    name_en: Harm to Others
+    severity: serious
+    action: safety_redirect
+    description: The user expresses intent to physically harm or kill someone else.
+    indicators: ["kill them", "hurt them", "make them bleed", "stab"]
+  - slug: abuse_disclosure
+    name_en: Abuse Disclosure
+    severity: serious
+    action: safety_redirect
+    description: The user discloses ongoing physical, sexual, or severe emotional abuse.
+    indicators: ["he hits me", "being abused", "touches me", "forces me"]
+  - slug: child_safety
+    name_en: Child Safety Concern
+    severity: serious
+    action: safety_redirect
+    description: The user discloses harm or risk of harm to a minor.
+    indicators: ["hitting my child too hard", "child abuse", "afraid for the kids"]
+  - slug: severe_distress
+    name_en: Severe Distress
+    severity: elevated
+    action: gentle_check_in
+    description: The user is experiencing a panic attack, extreme psychological breakdown, or severe hyperventilation.
+    indicators: ["can't breathe", "panic attack", "losing my mind", "can't stop crying"]
+  - slug: substance_abuse
+    name_en: Substance Abuse Risk
+    severity: elevated
+    action: gentle_check_in
+    description: The user mentions dangerous use of drugs or alcohol, potentially risking overdose.
+    indicators: ["took too many pills", "drunk", "high", "relapsed hard"]
+  - slug: severe_disorientation
+    name_en: Severe Disorientation
+    severity: elevated
+    action: gentle_check_in
+    description: The user exhibits signs of psychosis, severe detachment from reality, or extreme confusion.
+    indicators: ["hearing voices", "hallucinating", "demons are in the room"]

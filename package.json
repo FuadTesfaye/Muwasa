@@ -1,0 +1,33 @@
+{
+  "name": "muwasa",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --filter '*' dev",
+    "dev:server": "cd server && bun --watch src/index.ts",
+    "dev:web": "cd web && bun run dev",
+    "build": "cd web && bun run build",
+    "migrate": "bun run db/migrate.ts",
+    "ingest:quran": "bun run islamic-kb/scripts/ingest-tanzil.ts",
+    "ingest:translations": "bun run islamic-kb/scripts/ingest-quranenc.ts",
+    "ingest:hadith": "bun run islamic-kb/scripts/ingest-hadith.ts",
+    "ingest:all": "bun run ingest:quran && bun run ingest:translations && bun run ingest:hadith",
+    "validate": "bun run islamic-kb/scripts/validate-sources.ts",
+    "eval": "bun run evaluation/run-eval.ts",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "dotenv": "^16.4.7",
+    "fast-xml-parser": "^4.5.3",
+    "hono": "^4.7.4",
+    "openai": "^4.86.1",
+    "postgres": "^3.4.5",
+    "zod": "^3.24.2"
+  }
+}

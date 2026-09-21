@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 7%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 7%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 14%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 16%;
+    --input: 217 33% 16%;
+    --ring: 160 84% 39%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#070b14] text-slate-100 antialiased selection:bg-emerald-900/60 selection:text-emerald-100;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(6, 78, 59, 0.22), transparent 70%),
+      radial-gradient(ellipse 60% 40% at 85% 60%, rgba(180, 83, 9, 0.08), transparent 60%),
+      radial-gradient(ellipse 50% 30% at 15% 75%, rgba(6, 95, 70, 0.1), transparent 60%);
+    background-attachment: fixed;
+  }
+}
+
+/* Islamic Geometric Subtle Lattice Overlay */
+.islamic-lattice {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l7.5 17.5L55 15l-10 17.5L55 50l-17.5-2.5L30 60l-7.5-12.5L5 50l10-17.5L5 15l17.5 2.5z' fill='none' stroke='%2334d399' stroke-width='0.5' stroke-opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Typography Utilities */
+.font-arabic {
+  font-family: var(--font-amiri), serif;
+  text-rendering: optimizeLegibility;
+}
+
+.font-serif-heading {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.dir-rtl {
+  direction: rtl;
+}
+
+/* Quranic verse ornate bracket formatting */
+.quran-ayah {
+  line-height: 2.8;
+  letter-spacing: 0.02em;
+  font-feature-settings: "cv01" on, "cv02" on;
+}
+
+/* Custom Scrollbar for Contemplative Experience */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(51, 65, 85, 0.5);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.4);
+}
+
+/* Glow effects */
+.glow-emerald {
+  box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.2);
+}
+
+.glow-amber {
+  box-shadow: 0 0 40px -10px rgba(245, 158, 11, 0.15);
+}
+
+.glow-soft {
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+}

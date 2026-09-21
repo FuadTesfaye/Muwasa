@@ -1,0 +1,35 @@
+relationships:
+  - emotion: grief
+    situations: [death, friendship_loss, divorce]
+    spiritual_concepts: [sabr, qadr_confusion, dua_unanswered]
+    themes: [patience_reward, afterlife, reunion, mercy_of_time]
+    
+  - emotion: sadness
+    situations: [breakup, rejection, loneliness]
+    spiritual_concepts: [tawakkul, dua_unanswered]
+    themes: [allah_as_friend, replacing_with_better, transient_nature_of_dunya]
+
+  - emotion: guilt
+    situations: [missed_salah, sexual_temptation, betrayal]
+    spiritual_concepts: [repentance, sin_and_guilt, returning_to_allah]
+    themes: [allahs_mercy, doors_of_repentance, human_imperfection]
+    
+  - emotion: shame
+    situations: [addiction, academic_failure, career_failure]
+    spiritual_concepts: [lack_of_hope, recurring_sin]
+    themes: [covering_of_sins, unconditional_mercy, overcoming_despair]
+    
+  - emotion: hopelessness
+    situations: [financial_problem, chronic_illness, dua_unanswered]
+    spiritual_concepts: [lack_of_hope, qadr_confusion]
+    themes: [ease_after_hardship, wisdom_of_delay, relying_on_the_provider]
+    
+  - emotion: anxiety
+    situations: [academic_pressure, work_pressure, social_expectations]
+    spiritual_concepts: [tawakkul, fear_of_death]
+    themes: [trusting_the_plan, lowering_worldly_stakes, seeking_sakinah]
+
+  - emotion: anger
+    situations: [abuse, betrayal, spouse_conflict]
+    spiritual_concepts: [sabr, hasad]
+    themes: [forgiveness, justice_of_allah, controlling_anger]
