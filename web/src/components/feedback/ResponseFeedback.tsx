@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { ThumbsUp, ThumbsDown, Heart } from 'lucide-react';
 import { submitFeedback } from '@/lib/api';
 
 export default function ResponseFeedback({ messageId }: { messageId: string }) {
@@ -19,31 +18,28 @@ export default function ResponseFeedback({ messageId }: { messageId: string }) {
 
   if (submitted) {
     return (
-      <div className="flex items-center gap-1.5 text-xs text-emerald-400/80 mt-2 px-1 animate-in fade-in duration-300">
-        <Heart className="w-3.5 h-3.5 text-emerald-400 fill-emerald-400/20" />
-        <span>جَزَاكَ اللَّهُ خَيْرًا • May Allah grant you tranquility and ease.</span>
+      <div className="text-[11px] text-[#717684] pt-1 font-light animate-in fade-in duration-200">
+        جَزَاكَ اللَّهُ خَيْرًا • May Allah grant you tranquility and ease.
       </div>
     );
   }
 
   return (
-    <div className="flex items-center gap-3 mt-2 px-1 text-[11px] text-slate-500">
-      <span>Did this bring comfort or clarity?</span>
-      <div className="flex items-center gap-1">
+    <div className="flex items-center gap-3 pt-1 text-[11px] text-[#555a66]">
+      <span>Did this reflection bring peace or perspective?</span>
+      <div className="flex items-center gap-2">
         <button
           onClick={() => handleFeedback(true)}
-          className="flex items-center gap-1 px-2 py-1 text-slate-400 hover:text-emerald-300 hover:bg-emerald-950/40 rounded-lg transition-colors"
-          title="This reflection was comforting"
+          className="hover:text-[#c4c0b5] transition-colors"
         >
-          <ThumbsUp className="w-3 h-3" />
-          <span>Comforting</span>
+          Yes
         </button>
+        <span>•</span>
         <button
           onClick={() => handleFeedback(false)}
-          className="flex items-center gap-1 px-2 py-1 text-slate-400 hover:text-rose-300 hover:bg-rose-950/30 rounded-lg transition-colors"
-          title="Not quite what I needed"
+          className="hover:text-[#c4c0b5] transition-colors"
         >
-          <ThumbsDown className="w-3 h-3" />
+          Not quite
         </button>
       </div>
     </div>

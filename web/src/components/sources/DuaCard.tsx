@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { DuaSource } from '@/lib/types';
-import { Sparkles, Copy, Check } from 'lucide-react';
+import { Copy, Check } from 'lucide-react';
 
 export default function DuaCard({ source }: { source: DuaSource }) {
   const [copied, setCopied] = useState(false);
@@ -14,37 +14,40 @@ export default function DuaCard({ source }: { source: DuaSource }) {
   };
 
   return (
-    <div className="w-full my-4 border border-violet-800/40 bg-gradient-to-b from-violet-950/20 via-slate-900/60 to-slate-900/80 rounded-2xl overflow-hidden shadow-xl backdrop-blur-sm transition-all hover:border-violet-700/50">
-      {/* Header */}
-      <div className="px-5 py-3 border-b border-violet-900/30 flex items-center justify-between bg-violet-950/30">
+    <article className="w-full my-5 rounded-xl border border-[#232732] bg-[#12141a] overflow-hidden text-[#d4d6dd] shadow-sm">
+      {/* Header Bar */}
+      <header className="px-5 py-3 border-b border-[#1a1e27] flex items-center justify-between bg-[#0f1117]">
         <div className="flex items-center gap-2.5">
-          <div className="w-6 h-6 rounded-full bg-violet-900/60 border border-violet-700/40 flex items-center justify-center text-violet-300 text-xs">
-            <Sparkles className="w-3.5 h-3.5" />
-          </div>
-          <span className="text-xs font-bold tracking-widest text-violet-300 uppercase">
-            Supplication (Du'a)
+          <span className="w-1.5 h-1.5 rounded-full bg-[#6f8279]" />
+          <span className="text-[11px] font-mono tracking-widest text-[#84968d] uppercase font-medium">
+            Supplication (Du&rsquo;a)
           </span>
+          {source.title && (
+            <>
+              <span className="text-[11px] text-[#555a66] font-mono">•</span>
+              <span className="text-xs text-[#b8b3a7] font-serif-heading">
+                {source.title}
+              </span>
+            </>
+          )}
         </div>
 
         <button
           onClick={handleCopy}
-          title="Copy du'a"
-          className="p-1.5 rounded-lg text-violet-400/60 hover:text-violet-300 hover:bg-violet-900/40 transition-colors"
+          title="Copy supplication"
+          className="inline-flex items-center gap-1 text-[11px] text-[#6d7280] hover:text-[#c4c0b5] transition-colors p-1"
         >
-          {copied ? <Check className="w-3.5 h-3.5 text-violet-400" /> : <Copy className="w-3.5 h-3.5" />}
+          {copied ? <Check className="w-3.5 h-3.5 text-[#6f8279]" /> : <Copy className="w-3.5 h-3.5" />}
+          <span>{copied ? 'Copied' : 'Copy'}</span>
         </button>
-      </div>
+      </header>
 
       {/* Content */}
-      <div className="p-6 md:p-8 space-y-6">
-        <h3 className="text-center text-sm font-medium text-violet-300/80 tracking-wide">
-          {source.title}
-        </h3>
-
+      <div className="p-6 md:p-8 space-y-5 text-center">
         {/* Arabic Text */}
         <div className="py-2">
           <p
-            className="font-arabic text-xl md:text-3xl text-center leading-[2.6] text-violet-50 dir-rtl select-text"
+            className="font-arabic text-xl md:text-2xl text-center leading-[2.6] text-[#f4f2ed] dir-rtl select-text"
             dir="rtl"
           >
             {source.arabicText}
@@ -53,24 +56,24 @@ export default function DuaCard({ source }: { source: DuaSource }) {
 
         {/* Transliteration */}
         {source.transliteration && (
-          <p className="text-xs md:text-sm text-center text-violet-300/70 font-mono tracking-wide italic">
+          <p className="text-xs text-[#7f8899] font-mono tracking-wide italic max-w-xl mx-auto">
             {source.transliteration}
           </p>
         )}
 
         {/* Translation */}
-        <div className="pt-4 border-t border-violet-900/20">
-          <p className="text-slate-200 text-base leading-relaxed font-light text-center max-w-2xl mx-auto italic">
-            "{source.translation}"
+        <div className="pt-4 border-t border-[#1a1e27]">
+          <p className="text-[#dedad2] text-sm md:text-base leading-relaxed font-light italic max-w-xl mx-auto">
+            &ldquo;{source.translation}&rdquo;
           </p>
         </div>
       </div>
 
       {/* Footer */}
-      <div className="px-5 py-2.5 bg-violet-950/40 border-t border-violet-900/30 flex items-center justify-between text-[11px] text-violet-400/60 font-light">
+      <footer className="px-5 py-2.5 bg-[#0e1015] border-t border-[#1a1e27] flex items-center justify-between text-[11px] text-[#555a66] font-mono">
         <span>Reference: {source.sourceReference}</span>
-        <span>Peace for the Heart</span>
-      </div>
-    </div>
+        <span>Remembrance &amp; Ease</span>
+      </footer>
+    </article>
   );
 }

@@ -5,7 +5,6 @@ import { ChatMessage } from '@/lib/types';
 import MessageBubble from './MessageBubble';
 import InputArea from './InputArea';
 import TypingIndicator from './TypingIndicator';
-import { Sparkles, HeartHandshake } from 'lucide-react';
 
 interface ChatContainerProps {
   messages: ChatMessage[];
@@ -13,11 +12,11 @@ interface ChatContainerProps {
   isStreaming: boolean;
 }
 
-const STARTER_PROMPTS = [
-  'I feel so overwhelmed by my responsibilities and lack of sleep.',
-  'I feel guilty about past mistakes and feeling far from Allah.',
-  'My parents have expectations that are suffocating me.',
-  'I am grieving the loss of someone dear and my heart is aching.',
+const GENTLE_PROMPTS = [
+  'I am carrying a sadness I cannot easily explain.',
+  'I feel guilty about recurring sins and weak in my prayer.',
+  'The expectations around me are feeling suffocating.',
+  'I am hurting from a loss and struggling with acceptance.',
 ];
 
 export default function ChatContainer({ messages, onSendMessage, isStreaming }: ChatContainerProps) {
@@ -33,38 +32,32 @@ export default function ChatContainer({ messages, onSendMessage, isStreaming }: 
     <div className="flex-1 flex flex-col min-h-0 relative">
       <div
         ref={scrollRef}
-        className="flex-1 overflow-y-auto p-4 md:p-8 pb-36 scroll-smooth"
+        className="flex-1 overflow-y-auto px-4 md:px-8 py-8 pb-36 scroll-smooth"
       >
-        <div className="max-w-3xl mx-auto space-y-8">
+        <div className="max-w-2xl mx-auto space-y-8">
           {messages.length === 0 ? (
-            <div className="text-center my-12 md:my-16 space-y-6 animate-in fade-in zoom-in-95 duration-500">
-              <div className="w-14 h-14 mx-auto rounded-3xl bg-gradient-to-br from-emerald-900/60 via-slate-900 to-slate-950 border border-emerald-700/30 flex items-center justify-center shadow-xl shadow-emerald-950/40">
-                <HeartHandshake className="w-7 h-7 text-emerald-300" />
-              </div>
-
-              <div className="space-y-2">
-                <h2 className="text-2xl md:text-3xl font-arabic text-emerald-200 dir-rtl">
+            <div className="my-16 md:my-24 space-y-6 text-center animate-in fade-in duration-300">
+              <div className="space-y-3">
+                <p className="font-arabic text-2xl md:text-3xl text-[#b8b3a7] dir-rtl">
                   السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ
-                </h2>
-                <p className="text-base md:text-lg font-light text-slate-300 max-w-lg mx-auto leading-relaxed">
-                  Take a breath. You are in a safe, private space. You do not need to be strong or pretend here.
+                </p>
+                <p className="text-sm md:text-base font-light text-[#9499a8] max-w-md mx-auto leading-relaxed">
+                  Take an unhurried breath. This is a private place where you do not have to perform or hide what hurts.
                 </p>
               </div>
 
-              <div className="pt-4 max-w-xl mx-auto">
-                <span className="text-xs uppercase tracking-wider text-slate-500 font-medium flex items-center justify-center gap-1.5 mb-3">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                  Or choose a place to begin
+              <div className="pt-6 max-w-md mx-auto space-y-2">
+                <span className="text-[11px] font-mono tracking-wider text-[#555a66] uppercase">
+                  Or begin with a quiet thought
                 </span>
-
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {STARTER_PROMPTS.map((prompt, i) => (
+                <div className="flex flex-col gap-2 pt-1">
+                  {GENTLE_PROMPTS.map((p, i) => (
                     <button
                       key={i}
-                      onClick={() => onSendMessage(prompt)}
-                      className="px-4 py-2.5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-emerald-700/50 hover:bg-slate-800/60 text-slate-300 hover:text-emerald-200 text-xs transition-all text-left shadow-sm"
+                      onClick={() => onSendMessage(p)}
+                      className="text-left px-4 py-2.5 rounded-lg border border-[#1d212b] bg-[#12141a] hover:bg-[#161922] hover:border-[#2b303d] text-xs text-[#8c91a0] hover:text-[#d4d1c9] transition-all"
                     >
-                      {prompt}
+                      &ldquo;{p}&rdquo;
                     </button>
                   ))}
                 </div>
@@ -86,9 +79,9 @@ export default function ChatContainer({ messages, onSendMessage, isStreaming }: 
         </div>
       </div>
 
-      {/* Floating Sanctuary Input Area with subtle gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-[#070b14] via-[#070b14]/95 to-transparent pt-12 pointer-events-auto">
-        <div className="max-w-3xl mx-auto">
+      {/* Floating Bottom Input Slate */}
+      <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-[#0e1015] via-[#0e1015]/95 to-transparent pt-10 pointer-events-auto">
+        <div className="max-w-2xl mx-auto">
           <InputArea onSend={onSendMessage} disabled={isStreaming} />
         </div>
       </div>

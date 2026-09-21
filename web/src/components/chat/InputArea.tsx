@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Send, Sparkles } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 
 interface InputAreaProps {
   onSend: (msg: string) => void;
@@ -13,7 +13,7 @@ export default function InputArea({ onSend, disabled }: InputAreaProps) {
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
-      textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 200)}px`;
+      textareaRef.current.style.height = `${Math.min(textareaRef.current.scrollHeight, 180)}px`;
     }
   }, [input]);
 
@@ -39,35 +39,31 @@ export default function InputArea({ onSend, disabled }: InputAreaProps) {
     <div className="w-full space-y-2">
       <form
         onSubmit={handleSubmit}
-        className="relative flex items-end gap-2 bg-slate-900/80 backdrop-blur-xl border border-emerald-900/40 rounded-3xl p-2.5 shadow-2xl transition-all focus-within:border-emerald-500/60 focus-within:ring-2 focus-within:ring-emerald-500/20"
+        className="relative flex items-end rounded-xl border border-[#262934] bg-[#12141b] transition-all duration-200 focus-within:border-[#3e4455] p-2"
       >
         <textarea
           ref={textareaRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Speak what is on your heart... I am listening."
+          placeholder="Speak what is on your heart..."
           disabled={disabled}
-          className="w-full bg-transparent text-slate-100 placeholder:text-slate-500 resize-none max-h-[200px] py-3 px-4 focus:outline-none text-sm md:text-base leading-relaxed font-light"
+          className="w-full bg-transparent px-3 py-2.5 text-sm md:text-base text-[#edeae3] placeholder-[#4f535f] resize-none max-h-[180px] focus:outline-none font-light leading-relaxed"
           rows={1}
         />
         <button
           type="submit"
           disabled={disabled || !input.trim()}
-          title="Send message"
-          className="shrink-0 p-3 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white hover:from-emerald-500 hover:to-teal-500 disabled:opacity-20 disabled:cursor-not-allowed transition-all shadow-md shadow-emerald-950/50"
+          title="Send reflection"
+          className="shrink-0 p-2.5 rounded-lg bg-[#222632] hover:bg-[#2d3242] text-[#d4d1c9] disabled:opacity-20 disabled:cursor-not-allowed transition-colors border border-[#2f3444]"
         >
-          {disabled ? (
-            <Sparkles className="w-5 h-5 animate-spin" />
-          ) : (
-            <Send className="w-5 h-5" />
-          )}
+          <ArrowUp className="w-4 h-4" />
         </button>
       </form>
 
-      <div className="flex items-center justify-between px-4 text-[11px] text-slate-500 font-light">
-        <span>Enter to speak • Shift + Enter for new line</span>
-        <span className="hidden md:inline">Private & Ephemeral Session</span>
+      <div className="flex items-center justify-between px-2 text-[11px] text-[#555a66] font-mono">
+        <span>Enter ↵ to speak • Shift+Enter for new line</span>
+        <span className="hidden sm:inline">Unrecorded Session</span>
       </div>
     </div>
   );

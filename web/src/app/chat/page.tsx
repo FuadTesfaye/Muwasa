@@ -6,8 +6,7 @@ import { useSession } from '@/hooks/useSession';
 import { useChat } from '@/hooks/useChat';
 import ChatContainer from '@/components/chat/ChatContainer';
 import CrisisBanner from '@/components/safety/CrisisBanner';
-import { Button } from '@/components/ui/button';
-import { Trash2, Home, Shield, Sparkles } from 'lucide-react';
+import { ArrowLeft, Trash2 } from 'lucide-react';
 
 export default function ChatPage() {
   const router = useRouter();
@@ -33,7 +32,6 @@ export default function ChatPage() {
     router.push('/');
   };
 
-  // Check if any message in history triggered crisis safety response
   const hasCrisisContent = messages.some(
     (m) =>
       m.role === 'assistant' &&
@@ -42,93 +40,76 @@ export default function ChatPage() {
 
   if (isLoading) {
     return (
-      <div className="flex-1 flex flex-col items-center justify-center space-y-4">
-        <div className="w-8 h-8 rounded-full border-2 border-emerald-500 border-t-transparent animate-spin" />
-        <p className="font-arabic text-xl text-emerald-400">مُوَاسَاة</p>
-        <p className="text-xs text-slate-500 tracking-wider">Opening Private Sanctuary...</p>
+      <div className="flex-1 flex flex-col items-center justify-center space-y-3 text-center">
+        <span className="font-arabic text-xl text-[#8e8a80]">مُوَاسَاة</span>
+        <p className="text-xs font-mono text-[#555a66]">Opening sanctuary...</p>
       </div>
     );
   }
 
   return (
-    <div className="flex-1 flex flex-col h-screen overflow-hidden bg-[#070b14] relative">
-      {/* Dynamic Crisis Safety Banner */}
+    <div className="flex-1 flex flex-col h-screen overflow-hidden bg-[#0e1015]">
+      {/* Crisis Protocol Banner */}
       {hasCrisisContent && <CrisisBanner />}
 
-      {/* Sanctuary Top Navigation */}
-      <header className="shrink-0 h-16 border-b border-emerald-950/40 flex items-center justify-between px-4 md:px-8 z-20 bg-slate-950/80 backdrop-blur-xl shadow-lg">
-        {/* Left: Home link */}
-        <div className="flex items-center gap-3">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => router.push('/')}
-            className="text-slate-400 hover:text-emerald-300 hover:bg-emerald-950/40 rounded-xl transition-all"
-          >
-            <Home className="w-4 h-4 mr-2" />
-            <span>Sanctuary</span>
-          </Button>
-
-          {/* Privacy Pill */}
-          <div className="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/40 border border-emerald-800/30 text-[11px] text-emerald-400 font-light">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <Shield className="w-3 h-3 text-emerald-400" />
-            <span>Private & Ephemeral</span>
-          </div>
-        </div>
-
-        {/* Center: Brand Heading */}
-        <div className="flex items-center gap-2 text-center">
-          <span className="font-arabic text-2xl font-bold text-slate-100">مُوَاسَاة</span>
-          <span className="text-xs font-serif-heading italic text-slate-400 hidden sm:inline">• Muwāsā</span>
-        </div>
-
-        {/* Right: Delete Conversation Action */}
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => setShowDeleteModal(true)}
-          className="text-slate-400 hover:text-rose-300 hover:bg-rose-950/30 rounded-xl transition-all"
-          title="Delete this conversation"
+      {/* Top Header */}
+      <header className="shrink-0 h-14 border-b border-[#1b1f28] flex items-center justify-between px-6 z-20 bg-[#0e1015]">
+        <button
+          onClick={() => router.push('/')}
+          className="inline-flex items-center gap-1.5 text-xs text-[#717684] hover:text-[#e4e1da] transition-colors"
         >
-          <Trash2 className="w-4 h-4 mr-1.5" />
-          <span className="text-xs">End & Clear</span>
-        </Button>
+          <ArrowLeft className="w-3.5 h-3.5" />
+          <span>Sanctuary</span>
+        </button>
+
+        <div className="flex items-center gap-2 text-center">
+          <span className="font-arabic text-base text-[#d4d1c9]">مُوَاسَاة</span>
+          <span className="text-xs text-[#555a66] font-mono">•</span>
+          <span className="text-xs text-[#717684] font-serif-heading italic">Muwāsā</span>
+        </div>
+
+        <button
+          onClick={() => setShowDeleteModal(true)}
+          className="inline-flex items-center gap-1 text-xs text-[#717684] hover:text-[#e06c75] transition-colors"
+          title="Delete conversation immediately"
+        >
+          <Trash2 className="w-3.5 h-3.5" />
+          <span className="hidden sm:inline">End &amp; Clear</span>
+        </button>
       </header>
 
-      {/* Confirmation Modal for Session Deletion */}
+      {/* Delete Confirmation Modal */}
       {showDeleteModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 max-w-md w-full shadow-2xl space-y-6">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-150">
+          <div className="bg-[#141720] border border-[#262a36] rounded-xl p-6 max-w-sm w-full space-y-5 shadow-2xl">
             <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-slate-100 flex items-center gap-2">
-                <Trash2 className="w-5 h-5 text-rose-400" />
+              <h3 className="text-sm font-medium text-[#edeae3]">
                 Clear this conversation?
               </h3>
-              <p className="text-xs md:text-sm text-slate-400 leading-relaxed font-light">
-                This will immediately delete this entire conversation from active memory. Because Muwāsā is privacy-first, once deleted, this conversation cannot be recovered.
+              <p className="text-xs text-[#808696] font-light leading-relaxed">
+                This will immediately delete this conversation from active memory. Because Muwāsā is private by design, it cannot be recovered.
               </p>
             </div>
 
-            <div className="flex items-center justify-end gap-3 pt-2">
+            <div className="flex items-center justify-end gap-3 pt-1">
               <button
                 onClick={() => setShowDeleteModal(false)}
-                className="px-4 py-2.5 rounded-xl text-xs text-slate-300 hover:bg-slate-800 transition-colors"
+                className="px-3 py-1.5 text-xs text-[#717684] hover:text-[#d4d1c9] transition-colors"
               >
                 Cancel
               </button>
               <button
                 onClick={confirmDelete}
-                className="px-5 py-2.5 rounded-xl text-xs font-medium bg-rose-600 hover:bg-rose-500 text-white transition-all shadow-md shadow-rose-950"
+                className="px-3.5 py-1.5 rounded-lg text-xs bg-[#2b1f22] hover:bg-[#3d262b] text-[#f2a8b0] border border-[#4d2931] transition-colors"
               >
-                Yes, Delete Conversation
+                Wipe Conversation
               </button>
             </div>
           </div>
         </div>
       )}
 
-      {/* Interactive Chat Canvas */}
+      {/* Main Reading / Conversation Canvas */}
       <ChatContainer
         messages={messages}
         onSendMessage={sendMessage}

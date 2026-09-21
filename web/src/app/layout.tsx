@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#070b14',
+  themeColor: '#0e1015',
 };
 
 export default function RootLayout({
@@ -29,9 +29,8 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.variable} ${amiri.variable} ${cormorant.variable} font-sans bg-[#070b14] text-slate-100 antialiased min-h-screen flex flex-col relative`}>
-        <div className="absolute inset-0 islamic-lattice pointer-events-none z-0" />
-        <div className="relative z-10 flex-1 flex flex-col">
+      <body className={`${inter.variable} ${amiri.variable} ${cormorant.variable} font-sans bg-[#0e1015] text-[#d4d6dd] antialiased min-h-screen flex flex-col`}>
+        <div className="flex-1 flex flex-col">
           {children}
         </div>
       </body>

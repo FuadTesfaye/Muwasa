@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { QuranSource } from '@/lib/types';
-import { BookOpen, Copy, Check, ChevronDown, ChevronUp } from 'lucide-react';
+import { Copy, Check, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function QuranCard({ source }: { source: QuranSource }) {
   const [copied, setCopied] = useState(false);
@@ -13,38 +13,36 @@ export default function QuranCard({ source }: { source: QuranSource }) {
   };
 
   return (
-    <div className="w-full my-4 border border-emerald-800/40 bg-gradient-to-b from-emerald-950/20 via-slate-900/60 to-slate-900/80 rounded-2xl overflow-hidden shadow-xl backdrop-blur-sm transition-all hover:border-emerald-700/50">
-      {/* Header */}
-      <div className="px-5 py-3 border-b border-emerald-900/30 flex items-center justify-between bg-emerald-950/30">
+    <article className="w-full my-5 rounded-xl border border-[#262a36] bg-[#12141c] overflow-hidden text-[#d4d6dd] shadow-sm">
+      {/* Header Bar */}
+      <header className="px-5 py-3 border-b border-[#1c202a] flex items-center justify-between bg-[#101218]">
         <div className="flex items-center gap-2.5">
-          <div className="w-6 h-6 rounded-full bg-emerald-900/60 border border-emerald-700/40 flex items-center justify-center text-emerald-300 text-xs">
-            <BookOpen className="w-3.5 h-3.5" />
-          </div>
-          <span className="text-xs font-bold tracking-widest text-emerald-300 uppercase">
-            Holy Qur'an
+          <span className="w-1.5 h-1.5 rounded-full bg-[#8f8574]" />
+          <span className="text-[11px] font-mono tracking-widest text-[#9e9686] uppercase font-medium">
+            Holy Qur&rsquo;an
           </span>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <button
-            onClick={handleCopy}
-            title="Copy verse"
-            className="p-1.5 rounded-lg text-emerald-400/60 hover:text-emerald-300 hover:bg-emerald-900/40 transition-colors"
-          >
-            {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
-          </button>
-          <span className="text-xs font-mono font-medium px-2.5 py-0.5 bg-emerald-900/50 text-emerald-300 rounded-full border border-emerald-700/30">
+          <span className="text-[11px] text-[#555b68] font-mono">•</span>
+          <span className="text-xs text-[#b8b3a7] font-serif-heading">
             Surah {source.verseKey}
           </span>
         </div>
-      </div>
 
-      {/* Scripture Content */}
+        <button
+          onClick={handleCopy}
+          title="Copy verse and translation"
+          className="inline-flex items-center gap-1 text-[11px] text-[#6d7280] hover:text-[#c4c0b5] transition-colors p-1"
+        >
+          {copied ? <Check className="w-3.5 h-3.5 text-[#8f8574]" /> : <Copy className="w-3.5 h-3.5" />}
+          <span>{copied ? 'Copied' : 'Copy'}</span>
+        </button>
+      </header>
+
+      {/* Main Scripture Canvas */}
       <div className="p-6 md:p-8 space-y-6">
-        {/* Arabic Uthmani Script */}
+        {/* Arabic Uthmani Text */}
         <div className="py-2">
           <p
-            className="font-arabic text-2xl md:text-4xl text-center leading-[2.6] text-emerald-50 dir-rtl selection:bg-emerald-900/60 select-text"
+            className="font-arabic text-2xl md:text-3xl text-right leading-[2.5] text-[#f4f2ed] dir-rtl select-text"
             dir="rtl"
           >
             {source.arabicUthmani}
@@ -52,24 +50,24 @@ export default function QuranCard({ source }: { source: QuranSource }) {
         </div>
 
         {/* Translation */}
-        <div className="pt-4 border-t border-emerald-900/20">
-          <p className="text-slate-200 text-base md:text-lg leading-relaxed font-light italic text-center max-w-2xl mx-auto">
-            "{source.translation}"
+        <div className="pt-4 border-t border-[#1b1f28]">
+          <p className="text-[#dedad2] text-sm md:text-base leading-relaxed font-light italic">
+            &ldquo;{source.translation}&rdquo;
           </p>
         </div>
 
-        {/* Optional Tafsir Reflection */}
+        {/* Collapsible Tafsir Exegesis */}
         {source.tafsirExcerpt && (
-          <div className="mt-4 pt-4 border-t border-emerald-900/20">
+          <div className="pt-3 border-t border-[#1b1f28]">
             <button
               onClick={() => setShowTafsir(!showTafsir)}
-              className="flex items-center justify-between w-full text-xs text-emerald-400/80 hover:text-emerald-300 font-medium py-1"
+              className="flex items-center justify-between w-full text-xs text-[#8f8574] hover:text-[#c4c0b5] transition-colors py-1"
             >
-              <span>Reflect on this verse (Tafsir context)</span>
-              {showTafsir ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+              <span>Scholarly Context & Exegesis (Tafsir)</span>
+              {showTafsir ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
             </button>
             {showTafsir && (
-              <div className="mt-3 p-4 rounded-xl bg-slate-950/60 border border-emerald-900/20 text-xs md:text-sm text-slate-300 leading-relaxed font-light animate-in fade-in duration-200">
+              <div className="mt-2.5 p-4 rounded-lg bg-[#0e1015] border border-[#1e222c] text-xs text-[#8c92a2] leading-relaxed font-light">
                 {source.tafsirExcerpt}
               </div>
             )}
@@ -77,11 +75,11 @@ export default function QuranCard({ source }: { source: QuranSource }) {
         )}
       </div>
 
-      {/* Attribution Footer */}
-      <div className="px-5 py-2.5 bg-emerald-950/40 border-t border-emerald-900/30 flex items-center justify-between text-[11px] text-emerald-400/60 font-light">
+      {/* Quiet Attribution Footer */}
+      <footer className="px-5 py-2.5 bg-[#0e1015] border-t border-[#1c202a] flex items-center justify-between text-[11px] text-[#555a66] font-mono">
         <span>Translation: {source.translatorName || 'Saheeh International'}</span>
-        <span>Source: Tanzil Project (CC BY 3.0)</span>
-      </div>
-    </div>
+        <span>Text: Tanzil.net (Immutable)</span>
+      </footer>
+    </article>
   );
 }

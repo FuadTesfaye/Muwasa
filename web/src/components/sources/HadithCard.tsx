@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { HadithSource } from '@/lib/types';
-import { Scroll, Copy, Check, ChevronDown, ChevronUp, ShieldCheck } from 'lucide-react';
-import GradeBadge from '../shared/GradeBadge';
+import { Copy, Check, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function HadithCard({ source }: { source: HadithSource }) {
   const [copied, setCopied] = useState(false);
-  const [showExplanation, setShowExplanation] = useState(false);
+  const [showSharh, setShowSharh] = useState(false);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(
@@ -16,29 +15,33 @@ export default function HadithCard({ source }: { source: HadithSource }) {
   };
 
   return (
-    <div className="w-full my-4 border border-amber-800/40 bg-gradient-to-b from-amber-950/20 via-slate-900/60 to-slate-900/80 rounded-2xl overflow-hidden shadow-xl backdrop-blur-sm transition-all hover:border-amber-700/50">
-      {/* Header */}
-      <div className="px-5 py-3 border-b border-amber-900/30 flex items-center justify-between bg-amber-950/30">
+    <article className="w-full my-5 rounded-xl border border-[#27262f] bg-[#13141c] overflow-hidden text-[#d4d6dd] shadow-sm">
+      {/* Header Bar */}
+      <header className="px-5 py-3 border-b border-[#1c1d25] flex items-center justify-between bg-[#101117]">
         <div className="flex items-center gap-2.5">
-          <div className="w-6 h-6 rounded-full bg-amber-900/60 border border-amber-700/40 flex items-center justify-center text-amber-300 text-xs">
-            <Scroll className="w-3.5 h-3.5" />
-          </div>
-          <span className="text-xs font-bold tracking-widest text-amber-300 uppercase">
-            Prophetic Sunnah
+          <span className="w-1.5 h-1.5 rounded-full bg-[#9c7d5c]" />
+          <span className="text-[11px] font-mono tracking-widest text-[#a68968] uppercase font-medium">
+            Sunnah &amp; Hadith
+          </span>
+          <span className="text-[11px] text-[#555663] font-mono">•</span>
+          <span className="text-xs text-[#bcb2a2] font-serif-heading">
+            {source.collection} #{source.hadithNumber}
           </span>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#1c1d26] text-[#c2b6a2] border border-[#2d2c38]">
+            {source.grade || 'Sahih'}
+          </span>
           <button
             onClick={handleCopy}
-            title="Copy hadith"
-            className="p-1.5 rounded-lg text-amber-400/60 hover:text-amber-300 hover:bg-amber-900/40 transition-colors"
+            title="Copy hadith text"
+            className="inline-flex items-center gap-1 text-[11px] text-[#6d707c] hover:text-[#c4c0b5] transition-colors p-1"
           >
-            {copied ? <Check className="w-3.5 h-3.5 text-amber-400" /> : <Copy className="w-3.5 h-3.5" />}
+            {copied ? <Check className="w-3.5 h-3.5 text-[#9c7d5c]" /> : <Copy className="w-3.5 h-3.5" />}
           </button>
-          <GradeBadge grade={source.grade || 'Sahih'} />
         </div>
-      </div>
+      </header>
 
       {/* Content */}
       <div className="p-6 md:p-8 space-y-6">
@@ -46,7 +49,7 @@ export default function HadithCard({ source }: { source: HadithSource }) {
         {source.arabicMatn && (
           <div className="py-2">
             <p
-              className="font-arabic text-xl md:text-3xl text-center leading-[2.5] text-amber-100 dir-rtl select-text"
+              className="font-arabic text-xl md:text-2xl text-right leading-[2.4] text-[#f4f2ed] dir-rtl select-text"
               dir="rtl"
             >
               {source.arabicMatn}
@@ -54,25 +57,25 @@ export default function HadithCard({ source }: { source: HadithSource }) {
           </div>
         )}
 
-        {/* English Narration */}
-        <div className="pt-4 border-t border-amber-900/20">
-          <p className="text-slate-200 text-base md:text-lg leading-relaxed font-light text-center max-w-2xl mx-auto">
-            "{source.englishText}"
+        {/* English Text */}
+        <div className="pt-4 border-t border-[#1b1c25]">
+          <p className="text-[#dedad2] text-sm md:text-base leading-relaxed font-light">
+            &ldquo;{source.englishText}&rdquo;
           </p>
         </div>
 
         {/* Sharh / Scholarly Commentary */}
         {source.explanation && (
-          <div className="mt-4 pt-4 border-t border-amber-900/20">
+          <div className="pt-3 border-t border-[#1b1c25]">
             <button
-              onClick={() => setShowExplanation(!showExplanation)}
-              className="flex items-center justify-between w-full text-xs text-amber-400/80 hover:text-amber-300 font-medium py-1"
+              onClick={() => setShowSharh(!showSharh)}
+              className="flex items-center justify-between w-full text-xs text-[#9c7d5c] hover:text-[#c4b5a0] transition-colors py-1"
             >
-              <span>Scholarly Explanation & Context (Sharh)</span>
-              {showExplanation ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+              <span>Scholarly Commentary (Sharh)</span>
+              {showSharh ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
             </button>
-            {showExplanation && (
-              <div className="mt-3 p-4 rounded-xl bg-slate-950/60 border border-amber-900/20 text-xs md:text-sm text-slate-300 leading-relaxed font-light animate-in fade-in duration-200">
+            {showSharh && (
+              <div className="mt-2.5 p-4 rounded-lg bg-[#0e0f14] border border-[#1e1e28] text-xs text-[#8c909e] leading-relaxed font-light">
                 {source.explanation}
               </div>
             )}
@@ -81,15 +84,10 @@ export default function HadithCard({ source }: { source: HadithSource }) {
       </div>
 
       {/* Attribution Footer */}
-      <div className="px-5 py-2.5 bg-amber-950/40 border-t border-amber-900/30 flex items-center justify-between text-[11px] text-amber-400/60 font-light">
-        <span>
-          {source.collection} • Hadith #{source.hadithNumber}
-        </span>
-        <span className="flex items-center gap-1">
-          <ShieldCheck className="w-3 h-3 text-emerald-400" />
-          Verified Source: HadeethEnc.com
-        </span>
-      </div>
-    </div>
+      <footer className="px-5 py-2.5 bg-[#0e0f14] border-t border-[#1c1d25] flex items-center justify-between text-[11px] text-[#555663] font-mono">
+        <span>Grading: {source.grader || 'Verified Authentic'}</span>
+        <span>Source: HadeethEnc.com (Waqf)</span>
+      </footer>
+    </article>
   );
 }
