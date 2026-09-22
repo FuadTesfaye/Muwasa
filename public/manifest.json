@@ -1,0 +1,16 @@
+{
+  "name": "Muwāsā — مُوَاسَاة",
+  "short_name": "Muwāsā",
+  "description": "A private Islamic emotional-support companion that listens, understands, and grounds your heart in the Qur'an and Sunnah.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e1015",
+  "theme_color": "#0e1015",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
