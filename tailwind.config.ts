@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
+        sans: ["var(--font-lexend)", "sans-serif"],
         arabic: ["var(--font-amiri)", "serif"],
       },
       colors: {

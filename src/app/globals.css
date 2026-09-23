@@ -73,7 +73,6 @@
   }
   body {
     @apply bg-[#f8f7f4] text-[#1c1e24] dark:bg-[#0e1015] dark:text-[#d4d6dd] antialiased selection:bg-[#e4ded3] selection:text-[#1c1e24] dark:selection:bg-[#252a35] dark:selection:text-[#f4f2ed];
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
 
